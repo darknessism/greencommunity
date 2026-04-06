@@ -1,0 +1,1125 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ESG - FOR A BETTER SOCIETY</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts: Inter & Playfair Display -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800;900&family=Playfair+Display:ital,wght@0,700;0,900;1,700;1,900&display=swap" rel="stylesheet">
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        serif: ['Playfair Display', 'serif'],
+                    },
+                    colors: {
+                        brutal: {
+                            yellow: '#FFDF00',
+                            green: '#4ade80',
+                            pink: '#FF90E8',
+                            blue: '#93c5fd',
+                            purple: '#c084fc',
+                            orange: '#fdba74',
+                            white: '#FFFFFF',
+                            black: '#000000',
+                            bg: '#f4f4f0'
+                        }
+                    },
+                    boxShadow: {
+                        'brutal': '8px 8px 0px 0px rgba(0,0,0,1)',
+                        'brutal-sm': '4px 4px 0px 0px rgba(0,0,0,1)',
+                        'brutal-hover': '2px 2px 0px 0px rgba(0,0,0,1)',
+                        'brutal-white': '8px 8px 0px 0px rgba(255,255,255,1)',
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        body {
+            background-color: #f4f4f0;
+            color: #000;
+            overflow-x: hidden;
+        }
+
+        /* Marquee Animation */
+        .marquee-wrapper {
+            overflow: hidden;
+            white-space: nowrap;
+            border-top: 4px solid #000;
+            border-bottom: 4px solid #000;
+            background: #FF90E8;
+            padding: 10px 0;
+        }
+        .marquee-content {
+            display: inline-block;
+            animation: marquee 15s linear infinite;
+            font-weight: 900;
+            text-transform: uppercase;
+            font-size: 1.5rem;
+        }
+        @keyframes marquee {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(-50%); }
+        }
+
+        /* Animations */
+        .brutal-card {
+            transition: transform 0.1s ease-in-out, box-shadow 0.1s ease-in-out;
+        }
+        .brutal-card:hover {
+            transform: translate(6px, 6px);
+            box-shadow: 2px 2px 0px 0px rgba(0,0,0,1);
+        }
+
+        /* Reveal */
+        .reveal {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.4s cubic-bezier(0, 0, 0.2, 1);
+        }
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .checker-bg {
+            background-image: linear-gradient(45deg, #000 25%, transparent 25%), 
+                              linear-gradient(-45deg, #000 25%, transparent 25%), 
+                              linear-gradient(45deg, transparent 75%, #000 75%), 
+                              linear-gradient(-45deg, transparent 75%, #000 75%);
+            background-size: 20px 20px;
+            background-position: 0 0, 0 10px, 10px -10px, -10px 0px;
+        }
+        
+        .diagonal-stripes {
+            background: repeating-linear-gradient(
+                45deg,
+                #FFDF00,
+                #FFDF00 10px,
+                #000000 10px,
+                #000000 20px
+            );
+        }
+        
+        .dots-bg {
+            background-image: radial-gradient(#000 2px, transparent 2px);
+            background-size: 20px 20px;
+        }
+    </style>
+</head>
+<body class="font-sans antialiased selection:bg-black selection:text-brutal-yellow">
+
+    <!-- Header / Navbar -->
+    <header class="fixed w-full top-0 bg-brutal-bg border-b-4 border-black z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-20">
+                <div class="flex items-center gap-2">
+                    <div class="bg-black text-brutal-yellow px-2 py-1 font-black text-2xl tracking-tighter transform -rotate-2 border-2 border-black">
+                        ESG
+                    </div>
+                    <span class="font-serif font-black text-2xl italic tracking-wide sm:block">for Industrial <br>& Residential Complex</span>
+                </div>
+                <nav class="hidden md:flex space-x-1 lg:space-x-3 font-bold uppercase tracking-wider text-xs lg:text-sm">
+                    <a href="#deep-c" class="border-2 border-transparent hover:border-black hover:bg-[#00a3e0] hover:text-black px-2 py-1 transition-colors">Deep C: Our POV</a>
+                    <a href="#proposal" class="border-2 border-transparent hover:border-black hover:bg-brutal-pink px-2 py-1 transition-colors">Proposal</a>
+                    <a href="#case-study" class="border-2 border-transparent hover:border-black hover:bg-brutal-orange px-2 py-1 transition-colors">Example</a>
+                    <a href="#roi-strategy" class="border-2 border-black bg-white text-black hover:bg-black hover:text-white px-2 py-1 shadow-brutal-hover transform -rotate-2 transition-all">Benefits</a>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="relative pt-32 pb-20 bg-brutal-yellow overflow-hidden border-b-4 border-black">
+        <div class="absolute top-20 -right-10 w-64 h-64 bg-brutal-pink rounded-full border-4 border-black shadow-brutal mix-blend-multiply opacity-80"></div>
+        <div class="absolute bottom-10 -left-10 w-48 h-48 bg-brutal-blue border-4 border-black shadow-brutal mix-blend-multiply opacity-80 transform rotate-12"></div>
+        
+        <div class="relative z-10 text-center px-4 max-w-5xl mx-auto">
+            <div class="inline-block border-4 border-black bg-white px-4 py-1 font-black uppercase tracking-widest mb-8 shadow-brutal-sm transform -rotate-2">
+                Green / Sustainable
+            </div>
+            <h1 class="font-serif text-7xl md:text-9xl font-black mb-6 leading-none tracking-tighter uppercase">
+                Initiate a<br>
+                <span class="bg-black text-white px-4 py-2 inline-block transform rotate-1 shadow-brutal-white mt-2">Green Industrial Community</span>
+            </h1>
+            <p class="text-xl md:text-2xl font-bold mb-12 max-w-3xl mx-auto border-l-8 border-black pl-6 text-left">
+                Pioneering Eco-Industrial Development & ESG Strategy.<br>
+                Strip away the clichés, bringing sustainable building back to its rawest and most effective core.
+            </p>
+            <a href="#case-study" class="brutal-card inline-block px-10 py-5 text-2xl uppercase font-black bg-brutal-green border-4 border-black shadow-brutal text-black">
+                PRACTICAL ESG PROPOSAL &darr;
+            </a>
+        </div>
+    </section>
+
+    <!-- Ticker Tape -->
+    <div class="marquee-wrapper">
+        <div class="marquee-content">
+            SUSTAINABILITY IS NOT A TREND &bull; CIRCULAR ECONOMY &bull; ESG STRATEGY &bull; BUILD GREEN OR GO HOME &bull; SUSTAINABILITY IS NOT A TREND &bull; CIRCULAR ECONOMY &bull; ESG STRATEGY &bull; BUILD GREEN OR GO HOME &bull; SUSTAINABILITY IS NOT A TREND &bull; CIRCULAR ECONOMY &bull; ESG STRATEGY &bull; BUILD GREEN OR GO HOME &bull;
+        </div>
+    </div>
+
+    <!-- Section: DEEP C OVERVIEW -->
+    <section id="deep-c" class="py-24 bg-[#00a3e0] border-b-4 border-black relative overflow-hidden">
+        <!-- Decorative background shapes -->
+        <div class="absolute top-10 left-10 w-32 h-32 bg-[#009a44] rounded-full border-4 border-black mix-blend-multiply opacity-50 shadow-brutal"></div>
+        <div class="absolute bottom-20 right-10 w-64 h-64 bg-[#0056b3] border-4 border-black transform rotate-12 mix-blend-multiply opacity-50 shadow-brutal"></div>
+
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <!-- Header -->
+            <div class="mb-16 reveal text-center">
+                <h2 class="inline-block bg-[#0056b3] text-white px-6 md:px-8 py-4 font-black text-4xl md:text-6xl uppercase shadow-[8px_8px_0px_0px_#009a44] transform -rotate-1 border-4 border-black">
+                    DEEP C Industrial Zones
+                </h2>
+                <br>
+                <p class="font-bold text-xl md:text-2xl mt-6 bg-white text-black inline-block px-4 py-2 border-4 border-black shadow-[4px_4px_0px_0px_#000000] transform rotate-1">
+                    Eco-Industrial Parks in Haiphong & Quang Ninh
+                </p>
+            </div>
+
+            <!-- Hero Banner Image -->
+            <div class="reveal mb-16 max-w-6xl mx-auto border-4 border-black shadow-[12px_12px_0px_0px_#000000] bg-white p-2 transform rotate-1 hover:-rotate-1 transition-transform duration-300">
+                <img src="https://deepc.vn/images/location/Northern-Infrastructure-VN-unfont.jpg" alt="DEEP C Northern Infrastructure" class="w-full h-auto border-2 border-black">
+            </div>
+
+            <!-- Intro Box -->
+            <div class="reveal max-w-4xl mx-auto mb-20 bg-white border-4 border-black p-8 shadow-[8px_8px_0px_0px_#0056b3] transform -rotate-1 hover:rotate-0 transition-transform">
+                <div class="flex items-start gap-4">
+                    <span class="text-5xl mt-1">🏭</span>
+                    <p class="text-lg md:text-xl font-semibold leading-relaxed text-gray-900">
+                        First established in 1997 in Haiphong City through a collaboration between the Belgian group <strong class="bg-[#0056b3] text-white px-2 py-1 border-2 border-black">Rent-A-Port</strong> and a Vietnamese local authority to develop the Dinh Vu Industrial Zone (now DEEP C Haiphong I). Since its inception, it has evolved into one of the largest industrial zone developers in Vietnam.
+                    </p>
+                </div>
+            </div>
+
+            <!-- 6 Grid Cards -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                
+                <!-- Card 1: Scale -->
+                <div class="brutal-card bg-white border-4 border-black p-8 shadow-[8px_8px_0px_0px_#009a44] reveal flex flex-col h-full transform hover:-translate-y-2">
+                    <h4 class="font-black text-2xl uppercase mb-4 text-[#0056b3] border-b-4 border-black pb-2">Scale & Footprint</h4>
+                    <p class="font-semibold text-lg flex-grow text-gray-800">
+                        DEEP C manages a total of five industrial zones spanning over <strong>3,500 hectares</strong>. Distributed across two key regions: DEEP C Haiphong I, II, III, and DEEP C Quang Ninh I, II.
+                    </p>
+                </div>
+
+                <!-- Card 2: Location -->
+                <div class="brutal-card bg-[#0056b3] text-white border-4 border-black p-8 shadow-[8px_8px_0px_0px_#FFFFFF] reveal flex flex-col h-full transform rotate-1 hover:-translate-y-2 hover:rotate-0">
+                    <h4 class="font-black text-2xl uppercase mb-4 border-b-4 border-white pb-2">Strategic Location</h4>
+                    <p class="font-medium text-lg flex-grow text-blue-50">
+                        Positioned at the center of North Vietnam’s infrastructure. Prime access to Lach Huyen Deep Sea Port (100,000 DWT), Haiphong Port, international airports, and major expressways.
+                    </p>
+                </div>
+
+                <!-- Card 3: Real Estate -->
+                <div class="brutal-card bg-[#009a44] text-white border-4 border-black p-8 shadow-[8px_8px_0px_0px_#000000] reveal flex flex-col h-full transform -rotate-1 hover:-translate-y-2 hover:rotate-0">
+                    <h4 class="font-black text-2xl uppercase mb-4 border-b-4 border-white pb-2">Real Estate Solutions</h4>
+                    <p class="font-medium text-lg flex-grow text-green-50">
+                        Offers industrial land alongside ready-built workshops, warehouses, and offices (1,350m² - 5,400m²). Includes built-to-suit options with 2.5T/m² floor loading and over 9m free height.
+                    </p>
+                </div>
+
+                <!-- Card 4: Utilities -->
+                <div class="brutal-card bg-white border-4 border-black p-8 shadow-[8px_8px_0px_0px_#0056b3] reveal flex flex-col h-full transform rotate-1 hover:-translate-y-2 hover:rotate-0">
+                    <h4 class="font-black text-2xl uppercase mb-4 text-black border-b-4 border-black pb-2">Reliable Utilities</h4>
+                    <p class="font-semibold text-lg flex-grow text-gray-800">
+                        Robust underground networks, redundant treated water, ISO-certified wastewater treatment, underground telecom, and highly reliable power backed by ongoing renewable energy.
+                    </p>
+                </div>
+
+                <!-- Card 5: Tax -->
+                <div class="brutal-card bg-[#f4f4f0] border-4 border-black p-8 shadow-[8px_8px_0px_0px_#009a44] reveal flex flex-col h-full transform -rotate-1 hover:-translate-y-2 hover:rotate-0">
+                    <div class="absolute -top-4 -right-4 bg-[#00a3e0] text-black font-black px-4 py-2 border-4 border-black transform rotate-6 shadow-brutal-sm">4.35% CIT</div>
+                    <h4 class="font-black text-2xl uppercase mb-4 text-[#0056b3] border-b-4 border-black pb-2">Tax Incentives</h4>
+                    <p class="font-semibold text-lg flex-grow text-gray-800">
+                        Investors benefit from highly competitive Economic Zone tax incentives, notably an average Corporate Income Tax of <strong class="bg-[#00a3e0] px-1 border-2 border-black">4.35% for the first 15 years</strong> (lower than the standard 20%).
+                    </p>
+                </div>
+
+                <!-- Card 6: Community -->
+                <div class="brutal-card bg-black text-white border-4 border-black p-8 shadow-[8px_8px_0px_0px_#00a3e0] reveal flex flex-col h-full transform hover:-translate-y-2">
+                    <h4 class="font-black text-2xl uppercase mb-4 text-[#009a44] border-b-4 border-white pb-2">Global Community</h4>
+                    <p class="font-medium text-lg flex-grow text-gray-300">
+                        A trusted location for over <strong>120 investors</strong> globally across various industries. Long-term partners include multinational corporations like Chevron Lubricants and Nakashima.
+                    </p>
+                </div>
+
+            </div>
+
+            <!-- NEW EIP TRANSITION SECTION -->
+            <div class="mt-32 reveal relative z-20">
+                <div class="mb-16 text-center">
+                    <h3 class="inline-block bg-white text-[#0056b3] px-6 py-4 font-black text-3xl md:text-5xl uppercase shadow-[8px_8px_0px_0px_#000000] transform rotate-1 border-4 border-black">
+                        Eco-Industrial Park Transition
+                    </h3>
+                    <p class="font-bold text-lg md:text-xl mt-6 max-w-4xl mx-auto bg-black text-white p-6 md:p-8 border-4 border-white shadow-[8px_8px_0px_0px_#009a44] transform -rotate-1 text-left leading-relaxed">
+                        DEEP C is transitioning into an <strong class="text-[#009a44]">Eco-Industrial Park (EIP)</strong> model through a comprehensive strategy emphasizing circular economy principles, international collaboration, and a dedicated governance structure. This aligns with the Global Eco-Industrial Park Standard set by UNIDO.
+                    </p>
+                </div>
+
+                <div class="space-y-8 max-w-5xl mx-auto">
+                    <!-- Point 1: Dual Approach -->
+                    <div class="brutal-card bg-white border-4 border-black flex flex-col md:flex-row shadow-[8px_8px_0px_0px_#0056b3] reveal">
+                        <div class="bg-[#009a44] text-black font-black text-2xl md:text-3xl md:w-56 flex items-center justify-center p-6 border-b-4 md:border-b-0 md:border-r-4 border-black uppercase text-center transform -rotate-1">
+                            A Dual Approach
+                        </div>
+                        <div class="p-8 flex-grow">
+                            <p class="font-bold text-lg text-gray-800 leading-relaxed">
+                                DEEP C is simultaneously transforming its <strong class="bg-[#009a44] px-1 border-2 border-black text-black">existing zones</strong> (Haiphong 2 and 3) to comply with EIP requirements, while designing and developing <strong class="bg-[#00a3e0] px-1 border-2 border-black text-black">new zones</strong> (Quang Ninh 1 and 2) to meet EIP standards right from their inception.
+                            </p>
+                        </div>
+                    </div>
+                    
+                    <!-- Point 2: GEIPP -->
+                    <div class="brutal-card bg-[#0056b3] border-4 border-black flex flex-col md:flex-row shadow-[8px_8px_0px_0px_#00a3e0] reveal">
+                        <div class="bg-white text-[#0056b3] font-black text-2xl md:w-56 flex flex-col items-center justify-center p-6 border-b-4 md:border-b-0 md:border-r-4 border-black text-center transform rotate-1">
+                            <span>GEIPP</span>
+                            <span class="text-sm mt-2 font-bold bg-black text-white px-2 py-1 uppercase tracking-widest border-2 border-transparent">UNIDO Program</span>
+                        </div>
+                        <div class="p-8 bg-[#f4f4f0] flex-grow space-y-6">
+                            <div class="border-l-4 border-[#00a3e0] pl-4">
+                                <strong class="uppercase text-[#0056b3] text-xl block mb-2">Phase 1 (2020–2024):</strong>
+                                <p class="font-semibold text-gray-800">DEEP C Haiphong 1 (DVIZ) was selected as a pilot zone to establish EIP foundations (industrial symbiosis & RECP practices). Successfully achieved <strong class="bg-[#00a3e0] text-black px-1 border border-black">52 out of 64</strong> applicable indicators under the International EIP Framework.</p>
+                            </div>
+                            <div class="border-l-4 border-[#009a44] pl-4">
+                                <strong class="uppercase text-[#009a44] text-xl block mb-2">Phase 2 (2024–2028):</strong>
+                                <p class="font-semibold text-gray-800">Aims to deeply integrate circular economy principles by promoting <strong>"closed-loop" systems</strong>. The waste or by-products from one company are utilized as raw inputs for another.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Point 3: DEEP C Connect -->
+                    <div class="brutal-card bg-white border-4 border-black flex flex-col md:flex-row shadow-[8px_8px_0px_0px_#000000] reveal">
+                        <div class="bg-[#00a3e0] text-black font-black text-2xl md:text-3xl md:w-56 flex items-center justify-center p-6 border-b-4 md:border-b-0 md:border-r-4 border-black uppercase text-center transform -rotate-2">
+                            Industrial Symbiosis
+                        </div>
+                        <div class="p-8 flex-grow">
+                            <h4 class="font-black text-2xl uppercase mb-3 text-[#0056b3] border-b-4 border-black inline-block pb-1">"DEEP C Connect"</h4>
+                            <p class="font-bold text-lg text-gray-800 leading-relaxed mt-2">
+                                Breaking away from the linear "take-make-dispose" model, DEEP C views waste as a valuable new resource. They initiated the <strong>DEEP C Connect</strong> project acting as a bridge and data facilitator to help tenants identify and engage in resource exchange (surplus products, by-products, or waste streams).
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Point 4: Governance -->
+                    <div class="brutal-card bg-black text-white border-4 border-black flex flex-col md:flex-row shadow-[8px_8px_0px_0px_#009a44] reveal">
+                        <div class="bg-black text-[#009a44] font-black text-2xl md:text-3xl md:w-56 flex items-center justify-center p-6 border-b-4 border-white md:border-b-0 md:border-r-4 uppercase text-center transform rotate-1">
+                            Dedicated Governance
+                        </div>
+                        <div class="p-8 flex-grow bg-[#0056b3]">
+                            <p class="font-bold text-lg text-blue-50 leading-relaxed">
+                                Expanded the Sustainability Team in 2024 to specifically oversee the EIP transition. They are responsible for assessing compliance with EIP criteria (e.g., Vietnam's <strong class="bg-white text-black px-1 border-2 border-black whitespace-nowrap">Decree 35/2022/NĐ-CP</strong>), developing action plans, and leading the organization's emission reduction roadmap.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- NEW CORE PILLARS (PPP) SECTION -->
+            <div class="mt-32 reveal relative z-20">
+                <div class="mb-16 text-center">
+                    <h3 class="inline-block bg-black text-white px-6 py-4 font-black text-3xl md:text-5xl uppercase shadow-[8px_8px_0px_0px_#00a3e0] transform -rotate-1 border-4 border-white">
+                        The PPP Approach
+                    </h3>
+                    <p class="font-bold text-lg md:text-xl mt-6 max-w-4xl mx-auto bg-white text-black p-6 md:p-8 border-4 border-black shadow-[8px_8px_0px_0px_#0056b3] transform rotate-1 text-left leading-relaxed">
+                        The core pillars of DEEP C's sustainability strategy are built upon the <strong>PPP approach</strong>, which balances three foundational ESG pillars: <span class="bg-[#009a44] text-white px-2 py-1 border-2 border-black shadow-brutal-sm inline-block transform -rotate-2">Planet</span>, <span class="bg-[#00a3e0] text-black px-2 py-1 border-2 border-black shadow-brutal-sm inline-block transform rotate-2">People</span>, and <span class="bg-[#0056b3] text-white px-2 py-1 border-2 border-black shadow-brutal-sm inline-block transform -rotate-1">Profit</span>.
+                    </p>
+                </div>
+
+                <div class="grid grid-cols-1 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
+                    <!-- Planet -->
+                    <div class="brutal-card bg-[#009a44] text-white border-4 border-black p-8 shadow-[8px_8px_0px_0px_#000000] reveal flex flex-col transform hover:-translate-y-2 hover:rotate-1">
+                        <div class="text-6xl mb-6 drop-shadow-md">🌍</div>
+                        <h4 class="font-black text-3xl uppercase mb-4 border-b-4 border-white pb-2">Planet</h4>
+                        <p class="font-medium text-lg flex-grow text-green-50 leading-relaxed">
+                            Dedicated to reducing environmental impact and fostering ecological resilience. Core focus areas include the adoption of renewable energy (wind and solar), improving energy efficiency, and carefully managing greenhouse gas emissions. Additionally, DEEP C emphasizes circular economy principles through integrated water and waste management, and invests in green infrastructure, biodiversity, and nature-based ecosystems.
+                        </p>
+                    </div>
+
+                    <!-- People -->
+                    <div class="brutal-card bg-[#00a3e0] text-black border-4 border-black p-8 shadow-[8px_8px_0px_0px_#000000] reveal flex flex-col transform hover:-translate-y-2 hover:-rotate-1">
+                        <div class="text-6xl mb-6 drop-shadow-md">🤝</div>
+                        <h4 class="font-black text-3xl uppercase mb-4 text-[#0056b3] border-b-4 border-black pb-2">People</h4>
+                        <p class="font-semibold text-lg flex-grow text-gray-900 leading-relaxed">
+                            Centers on creating a safe, inclusive, and supportive environment for employees, tenants, and local residents. This means prioritizing occupational health and safety, fostering diversity, equity, and inclusion, and providing robust training. DEEP C focuses on building local communities—such as the <strong class="bg-white px-1 border-2 border-black">"DEEP C Care for Children"</strong> program—and actively engaging with tenants to build a collaborative business ecosystem.
+                        </p>
+                    </div>
+
+                    <!-- Profit -->
+                    <div class="brutal-card bg-[#0056b3] text-white border-4 border-black p-8 shadow-[8px_8px_0px_0px_#000000] reveal flex flex-col transform hover:-translate-y-2 hover:rotate-1">
+                        <div class="text-6xl mb-6 drop-shadow-md">📈</div>
+                        <h4 class="font-black text-3xl uppercase mb-4 border-b-4 border-white pb-2">Profit</h4>
+                        <p class="font-medium text-lg flex-grow text-blue-50 leading-relaxed">
+                            Ensures that the company's economic progress is responsible, ethical, and shared. It encompasses direct economic performance, financial integrity, and managing the positive and negative indirect economic impacts on the surrounding regions. This pillar emphasizes transparent tax practices and responsible procurement, prioritizing local and ethical sourcing to strengthen regional economies and minimize environmental footprints.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- NEW PEOPLE PILLAR DEEP DIVE SECTION -->
+            <div class="mt-32 reveal relative z-20 pb-20">
+                <div class="mb-16 text-center">
+                    <h3 class="inline-block bg-[#00a3e0] text-black px-6 py-4 font-black text-3xl md:text-5xl uppercase shadow-[8px_8px_0px_0px_#0056b3] transform rotate-1 border-4 border-black">
+                        Deep Dive: The People Pillar
+                    </h3>
+                    <p class="font-bold text-lg mt-6 max-w-3xl mx-auto bg-white border-4 border-black p-4 transform -rotate-1 shadow-[4px_4px_0px_0px_#000000]">
+                        The "People" pillar focuses extensively on its workforce, the surrounding local communities, and its tenant ecosystem.
+                    </p>
+                </div>
+
+                <div class="space-y-16 max-w-6xl mx-auto">
+                    <!-- 1. Workforce -->
+                    <div class="brutal-card bg-white border-4 border-black shadow-[12px_12px_0px_0px_#000000] p-8 md:p-12 transform -rotate-1 relative">
+                        <div class="absolute -top-6 right-8 bg-[#009a44] text-white font-black px-4 py-2 border-4 border-black transform rotate-3 shadow-brutal-sm text-xl">
+                            426 Employees
+                        </div>
+                        <h4 class="inline-block bg-black text-white px-4 py-2 font-black text-3xl uppercase mb-6 border-4 border-[#00a3e0] shadow-brutal-sm transform rotate-1">
+                            1. Workforce of DEEP C
+                        </h4>
+                        <p class="font-bold text-xl text-gray-800 mb-8 border-l-4 border-[#00a3e0] pl-4">
+                            DEEP C aims to cultivate a safe, inclusive, and empowering workplace.
+                        </p>
+                        
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                            <div class="bg-brutal-yellow border-4 border-black p-6 shadow-[4px_4px_0px_0px_#000000]">
+                                <h5 class="font-black uppercase mb-3 flex items-center gap-2 text-xl"><span class="text-2xl">👷</span> Health & Safety</h5>
+                                <p class="font-semibold text-gray-900 leading-relaxed">
+                                    <strong class="bg-white px-1 border border-black">Zero recordable injury rate</strong> & occupational diseases in 2024. Risk managed via daily toolbox meetings, safety inspections, and "Safety Star" awards. The Fire Fighting and Rescue Team responded to 40 incidents in 2024 (32 aiding the broader outside community).
+                                </p>
+                            </div>
+                            <div class="bg-brutal-pink border-4 border-black p-6 shadow-[4px_4px_0px_0px_#000000]">
+                                <h5 class="font-black uppercase mb-3 flex items-center gap-2 text-xl"><span class="text-2xl">⚖️</span> Diversity & Inclusion</h5>
+                                <p class="font-semibold text-gray-900 leading-relaxed">
+                                    96.69% local Vietnamese workforce complemented by international staff. DEEP C successfully reached <strong class="bg-white px-1 border border-black">46% female representation</strong> in management roles, actively working toward gender balance.
+                                </p>
+                            </div>
+                            <div class="bg-brutal-blue border-4 border-black p-6 shadow-[4px_4px_0px_0px_#000000]">
+                                <h5 class="font-black uppercase mb-3 flex items-center gap-2 text-xl"><span class="text-2xl">📚</span> Training & Dev</h5>
+                                <p class="font-semibold text-gray-900 leading-relaxed">
+                                    Provided <strong class="bg-white px-1 border border-black">2,776 training hours</strong> in 2024 covering soft skills, safety, tax updates, and environmental regulations.
+                                </p>
+                            </div>
+                            <div class="bg-brutal-green border-4 border-black p-6 shadow-[4px_4px_0px_0px_#000000]">
+                                <h5 class="font-black uppercase mb-3 flex items-center gap-2 text-xl"><span class="text-2xl">🎁</span> Comp & Benefits</h5>
+                                <p class="font-semibold text-gray-900 leading-relaxed">
+                                    16 days annual leave, premium healthcare, and a guaranteed bonus of 1.5x gross monthly wage. Bi-monthly organic food baskets sourced from <strong>DEEP C Farm</strong> assist lower-income workers.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 2. Local Communities -->
+                    <div class="brutal-card bg-[#00a3e0] text-black border-4 border-black shadow-[12px_12px_0px_0px_#0056b3] p-8 md:p-12 transform rotate-1">
+                        <h4 class="inline-block bg-white text-[#0056b3] px-4 py-2 font-black text-3xl uppercase mb-6 border-4 border-black shadow-brutal-sm transform -rotate-1">
+                            2. Building Local Communities
+                        </h4>
+                        <p class="font-bold text-xl text-gray-900 mb-8 border-l-4 border-black pl-4">
+                            Aligning success with the socio-economic development of Hai Phong and Quang Ninh.
+                        </p>
+
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                            <div class="bg-white border-4 border-black p-6 shadow-[4px_4px_0px_0px_#000000]">
+                                <h5 class="font-black uppercase mb-3 text-xl text-[#0056b3]">Local Engagement</h5>
+                                <p class="font-semibold text-gray-800 leading-relaxed">
+                                    Contributed over <strong>1.5 billion VND in 2024</strong> to social initiatives (housing, typhoon relief, cultural festivals). Operates a <strong class="bg-brutal-yellow px-1 border-2 border-black text-black">24/7 First Aid Clinic</strong> in partnership with Viet Tiep Hospital, providing free emergency care to tenants and local residents.
+                                </p>
+                            </div>
+                            <div class="bg-black text-white border-4 border-black p-6 shadow-[4px_4px_0px_0px_#009a44]">
+                                <h5 class="font-black uppercase mb-3 text-xl text-[#00a3e0]">DEEP C Care for Children</h5>
+                                <p class="font-semibold text-gray-300 leading-relaxed">
+                                    Launched in 2024, offering long-term scholarships and mentorship to vulnerable students. Employees volunteer as mentors for emotional/career guidance. Provides practical resources like laptops, bicycles, and tuition assistance.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 3. Tenant Engagement -->
+                    <div class="brutal-card bg-[#0056b3] text-white border-4 border-black shadow-[12px_12px_0px_0px_#00a3e0] p-8 md:p-12 transform -rotate-1">
+                        <h4 class="inline-block bg-[#009a44] text-black px-4 py-2 font-black text-3xl uppercase mb-6 border-4 border-black shadow-brutal-sm transform rotate-2">
+                            3. Tenant Engagement
+                        </h4>
+                        <p class="font-bold text-xl text-blue-100 mb-8 border-l-4 border-[#00a3e0] pl-4">
+                            Building a collaborative business community beyond basic landlord-tenant relations.
+                        </p>
+
+                        <div class="space-y-6">
+                            <div class="bg-white text-black border-4 border-black p-6 flex flex-col md:flex-row gap-6 items-center shadow-[4px_4px_0px_0px_#000000]">
+                                <div class="bg-[#00a3e0] font-black text-2xl p-4 border-4 border-black transform -rotate-3 text-center whitespace-nowrap">
+                                    DEEP C Connect
+                                </div>
+                                <p class="font-semibold text-gray-800 flex-grow">
+                                    A strategic project promoting <strong>"industrial symbiosis"</strong> by acting as a data facilitator to help tenants buy, sell, or exchange surplus goods, by-products, and waste streams, actively driving the circular economy.
+                                </p>
+                            </div>
+                            <div class="bg-black text-white border-4 border-[#00a3e0] p-6 flex flex-col md:flex-row gap-6 items-center shadow-[4px_4px_0px_0px_#009a44]">
+                                <div class="bg-brutal-yellow text-black font-black text-2xl p-4 border-4 border-black transform rotate-2 text-center">
+                                    Knowledge & Networking
+                                </div>
+                                <p class="font-semibold text-gray-300 flex-grow">
+                                    Regularly hosts workshops on emerging trends, tax laws, and environmental compliance. Fosters community bonding through events like the annual <strong class="text-brutal-yellow">"DEEP C Cup"</strong> football tournament (300+ players from 21 tenant companies in 2024).
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- NEW MB AGEAS LIFE PARTNERSHIP SECTION -->
+            <div id="proposal" class="mt-32 reveal relative z-20 pb-20 border-t-8 border-black pt-20 border-dashed">
+                <div class="mb-16 text-center">
+                    <h3 class="inline-block bg-brutal-pink text-black px-6 py-4 font-black text-3xl md:text-5xl uppercase shadow-[8px_8px_0px_0px_#000000] transform -rotate-1 border-4 border-black">
+                        Strategic Partnership Opportunity
+                    </h3>
+                    <h4 class="block mt-4 font-black text-2xl uppercase text-[#0056b3] bg-white inline-block px-4 py-2 border-4 border-black shadow-[4px_4px_0px_0px_#000000] transform rotate-1">
+                        MB Ageas Life <span class="text-black">x</span> DEEP C
+                    </h4>
+                </div>
+
+                <!-- Intro -->
+                <div class="max-w-5xl mx-auto mb-16 bg-white border-4 border-black p-8 md:p-12 shadow-[12px_12px_0px_0px_#000000] transform rotate-1 reveal">
+                    <p class="font-bold text-xl leading-relaxed text-gray-800 mb-6">
+                        A strategic partnership between MB Ageas Life and DEEP C Industrial Zones represents a powerful opportunity to elevate the "People" pillar of sustainable development. By blending DEEP C’s established infrastructure with MB Ageas Life's financial protection expertise, the two entities can forge a resilient, high-retention workforce ecosystem.
+                    </p>
+                    <p class="font-semibold text-lg leading-relaxed text-gray-700 mb-8">
+                        When developing a high-tech and sustainable industrial park in Vietnam, establishing a robust social safety net is just as critical as building green infrastructure. Because both DEEP C (originally a joint venture with Belgian investor Rent-A-Port ) and MB Ageas Life (backed by Belgium’s Ageas Group) share a <strong class="bg-brutal-yellow px-1 border border-black text-black">European heritage rooted in strong ESG standards</strong>, their alignment on worker welfare is a natural fit.
+                    </p>
+                    <p class="font-black text-xl text-white bg-black inline-block p-4 border-4 border-[#00a3e0] transform -rotate-1 shadow-[4px_4px_0px_0px_#009a44]">
+                        Here is a blueprint for how an integrated insurance program can create a healthy, stable, and sustainable community within DEEP C’s eco-industrial parks:
+                    </p>
+                </div>
+
+                <!-- 4 Pillars Grid -->
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-10 max-w-6xl mx-auto">
+                    <!-- Point 1 -->
+                    <div class="brutal-card bg-brutal-green border-4 border-black p-8 shadow-[8px_8px_0px_0px_#000000] reveal flex flex-col transform hover:-translate-y-2 hover:rotate-1">
+                        <div class="bg-white border-4 border-black font-black text-2xl uppercase p-3 mb-6 inline-block transform -rotate-2 shadow-brutal-sm">
+                            1. Proactive Health and Applied Preventive Medicine
+                        </div>
+                        <p class="font-semibold text-lg mb-4 text-black leading-relaxed">
+                            DEEP C already places a massive emphasis on Occupational Health and Safety (OHS), achieving zero work-related accidents and zero occupational diseases in 2024. They also operate a 24/7 First Aid Clinic at DEEP C Hai Phong 2 in partnership with Viet Tiep Hospital.
+                        </p>
+                        <p class="font-bold text-lg mb-4 text-black leading-relaxed bg-white/60 p-4 border-l-4 border-black">
+                            MB Ageas Life can build upon this foundation by shifting the focus from reactive care to proactive well-being. By integrating principles of applied preventive medicine into a group health insurance rider, the program could:
+                        </p>
+                        <ul class="space-y-4 font-semibold text-black mt-2">
+                            <li class="flex gap-3 items-start"><span class="mt-1 text-xl">🏥</span> <span>Fund annual, comprehensive health screenings for workers directly at the onsite clinic.</span></li>
+                            <li class="flex gap-3 items-start"><span class="mt-1 text-xl">💻</span> <span>Provide coverage for telemedicine consultations, nutritional counseling, and mental health workshops.</span></li>
+                            <li class="flex gap-3 items-start"><span class="mt-1 text-xl">📉</span> <span>Offer premium discounts to tenant companies that maintain zero-accident records and high OHS compliance, incentivizing a culture of safety.</span></li>
+                        </ul>
+                    </div>
+
+                    <!-- Point 2 -->
+                    <div class="brutal-card bg-brutal-blue border-4 border-black p-8 shadow-[8px_8px_0px_0px_#000000] reveal flex flex-col transform hover:-translate-y-2 hover:-rotate-1">
+                        <div class="bg-white border-4 border-black font-black text-2xl uppercase p-3 mb-6 inline-block transform rotate-2 shadow-brutal-sm">
+                            2. Family Security and Education continuity
+                        </div>
+                        <p class="font-semibold text-lg mb-6 text-black leading-relaxed">
+                            A worker's stability is deeply tied to their family's financial security. DEEP C already demonstrates a commitment to the next generation through its "DEEP C Care for Children" project, which provides long-term financial support and mentoring to vulnerable students until they complete their education.
+                        </p>
+                        <p class="font-bold text-lg text-black leading-relaxed mt-auto bg-black text-white p-6 border-4 border-white shadow-[4px_4px_0px_0px_#FFDF00] transform -rotate-1">
+                            MB Ageas Life specializes in life insurance and education savings funds. A joint <strong class="text-brutal-yellow uppercase text-xl">"Family Shield"</strong> initiative could guarantee that if a worker suffers a critical illness or fatal accident, MB Ageas steps in to fund the children's education. This ensures that a sudden tragedy does not force children to abandon their educational pursuits to enter the workforce prematurely.
+                        </p>
+                    </div>
+
+                    <!-- Point 3 -->
+                    <div class="brutal-card bg-[#a855f7] text-white border-4 border-black p-8 shadow-[8px_8px_0px_0px_#000000] reveal flex flex-col transform hover:-translate-y-2 hover:rotate-1">
+                        <div class="bg-black text-white border-4 border-white font-black text-2xl uppercase p-3 mb-6 inline-block transform -rotate-2 shadow-[4px_4px_0px_0px_#00a3e0]">
+                            3. "DEEP C Connect" Micro-Insurance Integration
+                        </div>
+                        <p class="font-semibold text-lg mb-6 leading-relaxed">
+                            DEEP C acts as a facilitator for its tenants through platforms like "DEEP C Connect," which builds a collaborative business ecosystem. DEEP C could negotiate a master insurance framework with MB Ageas Life, offering tenant companies access to premium group life and health insurance at heavily discounted, wholesale rates.
+                        </p>
+                        <div class="mt-auto space-y-4">
+                            <div class="bg-white text-black border-4 border-black p-5 shadow-brutal-sm transform rotate-1">
+                                <strong class="uppercase text-[#a855f7] block mb-1 text-xl border-b-2 border-black pb-1 inline-block">For Tenants:</strong>
+                                <p class="font-semibold mt-2">This acts as a powerful talent retention tool, reducing turnover and training costs.</p>
+                            </div>
+                            <div class="bg-white text-black border-4 border-black p-5 shadow-brutal-sm transform -rotate-1">
+                                <strong class="uppercase text-[#a855f7] block mb-1 text-xl border-b-2 border-black pb-1 inline-block">For Workers:</strong>
+                                <p class="font-semibold mt-2">It provides access to high-tier financial protection (covering hospital allowances, maternity, and critical illness) that they might not be able to afford individually.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Point 4 -->
+                    <div class="brutal-card bg-brutal-orange border-4 border-black p-8 shadow-[8px_8px_0px_0px_#000000] reveal flex flex-col transform hover:-translate-y-2 hover:-rotate-1">
+                        <div class="bg-white border-4 border-black font-black text-2xl uppercase p-3 mb-6 inline-block transform rotate-2 shadow-brutal-sm">
+                            4. Financial Literacy and Long-Term Stability
+                        </div>
+                        <p class="font-semibold text-lg mb-6 text-black leading-relaxed">
+                            Beyond infrastructure, the "Social" pillar encompasses improving the overall well-being of residents and stakeholders. 
+                        </p>
+                        <div class="font-bold text-lg text-black leading-relaxed mt-auto bg-white p-6 border-4 border-black border-dashed">
+                            <span class="text-4xl mb-4 block">💡</span>
+                            <p>
+                                MB Ageas Life could host regular financial literacy seminars within the industrial park, educating workers on saving, investing, and protecting their assets. A financially literate workforce experiences less stress, which directly translates to higher productivity and a more harmonious local community.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- NEW TRIPARTITE CO-PAY MODEL SECTION -->
+            <div class="mt-20 reveal relative z-20 pb-24">
+                <div class="max-w-6xl mx-auto bg-brutal-bg border-8 border-black shadow-[16px_16px_0px_0px_#00a3e0] p-8 md:p-16 transform -rotate-1">
+                    
+                    <div class="text-center mb-12">
+                        <h3 class="inline-block bg-black text-white px-6 py-3 font-black text-3xl md:text-5xl uppercase shadow-[8px_8px_0px_0px_#FFDF00] transform rotate-1 border-4 border-black">
+                            The Tripartite Co-Pay Model
+                        </h3>
+                        <p class="font-bold text-xl uppercase tracking-widest mt-6 text-gray-700 bg-white inline-block px-4 py-2 border-4 border-black border-dashed transform -rotate-1">
+                            Shared Investment Framework
+                        </p>
+                        <p class="font-semibold text-lg mt-6 max-w-3xl mx-auto leading-relaxed">
+                            This model treats the insurance program as a joint venture between all three stakeholders, fostering a strong sense of shared responsibility and ensuring long-term sustainability.
+                        </p>
+                    </div>
+
+                    <!-- 3 Stakeholders Columns -->
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                        
+                        <!-- Developer -->
+                        <div class="bg-[#009a44] text-white border-4 border-black p-6 flex flex-col items-center text-center transform hover:-translate-y-2 transition-transform shadow-brutal-sm">
+                            <div class="font-black text-6xl mb-4 bg-white text-black w-24 h-24 flex items-center justify-center border-4 border-black transform rotate-6 rounded-full shadow-brutal-sm">
+                                15<span class="text-3xl">%</span>
+                            </div>
+                            <h4 class="font-black text-2xl uppercase mb-3 border-b-4 border-white pb-1 w-full">The Developer</h4>
+                            <p class="font-semibold text-lg flex-grow leading-relaxed">
+                                Contributes a direct financial subsidy to the master premium. This is justified as a marketing and real estate asset; a park with heavily subsidized healthcare attracts premium tenants, allowing the developer to maintain <strong class="bg-black text-white px-1">higher land lease rates</strong> and occupancy levels.
+                            </p>
+                        </div>
+
+                        <!-- Tenants -->
+                        <div class="bg-[#0056b3] text-white border-4 border-black p-6 flex flex-col items-center text-center transform hover:-translate-y-2 transition-transform shadow-brutal-sm scale-105 z-10">
+                            <div class="font-black text-6xl mb-4 bg-white text-black w-28 h-28 flex items-center justify-center border-4 border-black transform -rotate-6 rounded-full shadow-[6px_6px_0px_0px_#FFDF00]">
+                                70<span class="text-3xl">%</span>
+                            </div>
+                            <h4 class="font-black text-2xl uppercase mb-3 border-b-4 border-white pb-1 w-full text-brutal-yellow">The Tenants</h4>
+                            <p class="font-semibold text-lg flex-grow leading-relaxed">
+                                Carry the bulk of the premium. However, because the developer and workers are co-funding the pool, the tenants secure a <strong class="bg-brutal-yellow text-black px-1 border border-black">much richer benefits package</strong> for their workforce than they could afford independently.
+                            </p>
+                        </div>
+
+                        <!-- Workers -->
+                        <div class="bg-brutal-pink text-black border-4 border-black p-6 flex flex-col items-center text-center transform hover:-translate-y-2 transition-transform shadow-brutal-sm">
+                            <div class="font-black text-6xl mb-4 bg-white text-black w-24 h-24 flex items-center justify-center border-4 border-black transform rotate-3 rounded-full shadow-brutal-sm">
+                                15<span class="text-3xl">%</span>
+                            </div>
+                            <h4 class="font-black text-2xl uppercase mb-3 border-b-4 border-black pb-1 w-full">The Workers</h4>
+                            <p class="font-semibold text-lg flex-grow leading-relaxed">
+                                Pay a small percentage of the premium. Having <strong class="bg-white px-1 border border-black">"skin in the game"</strong> reduces frivolous utilization of the benefits and ensures workers place a high perceived value on the insurance program provided by their employer and the park.
+                            </p>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+            <!-- NEW MASSIVE ROI FOR DEEP C SECTION -->
+            <div class="mt-10 reveal relative z-20 pb-10">
+                <div class="mb-16 text-center">
+                    <h3 class="inline-block bg-[#00a3e0] text-black px-6 py-4 font-black text-3xl md:text-5xl uppercase shadow-[8px_8px_0px_0px_#000000] transform rotate-1 border-4 border-black">
+                        Beyond Operating Expenses
+                    </h3>
+                    <p class="font-bold text-lg mt-6 max-w-4xl mx-auto bg-white border-4 border-black p-6 md:p-8 transform -rotate-1 shadow-[8px_8px_0px_0px_#009a44] text-left leading-relaxed">
+                        Treat this not as an operating expense, but as a <strong class="bg-[#009a44] text-white px-2 py-1 border-2 border-black inline-block transform rotate-1">multi-layered financial and strategic asset</strong> for DEEP C. Here is how MB Ageas Life can detail the financial benefits to DEEP C, moving from direct cash offsets to massive ESG valuations:
+                    </p>
+                </div>
+
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-10 max-w-6xl mx-auto">
+                    
+                    <!-- Point 1 -->
+                    <div class="brutal-card bg-brutal-pink border-4 border-black p-8 shadow-[8px_8px_0px_0px_#000000] reveal flex flex-col transform hover:-translate-y-2 hover:-rotate-1">
+                        <div class="bg-white border-4 border-black font-black text-xl uppercase p-3 mb-2 inline-block transform -rotate-2 shadow-brutal-sm">
+                            1. Platform Facilitation Fees
+                        </div>
+                        <p class="font-black text-sm mb-6 uppercase tracking-wider bg-black text-white px-3 py-1 inline-block self-start transform rotate-1 border-2 border-white">(The "Cash Back" Angle)</p>
+                        
+                        <p class="font-semibold text-lg text-black leading-relaxed mb-6">
+                            Under Vietnamese insurance regulations, direct "commission" typically goes to licensed agents or brokers. However, MB Ageas Life can structure a B2B arrangement where DEEP C Management Company (DCMC) receives a Platform Facilitation or Data Management Fee.
+                        </p>
+                        
+                        <div class="mt-auto space-y-4">
+                            <div class="bg-white border-4 border-black p-5 shadow-brutal-sm">
+                                <strong class="block uppercase border-b-4 border-brutal-pink pb-1 mb-2 text-xl font-black">The Mechanism</strong>
+                                <p class="text-base font-semibold leading-relaxed">Because DEEP C is leveraging its "DEEP C Connect" platform to aggregate tenant participation, streamline marketing, and potentially facilitate payroll deductions, MB Ageas Life saves massively on customer acquisition and administrative costs.</p>
+                            </div>
+                            <div class="bg-black text-white border-4 border-black p-5 shadow-brutal-sm">
+                                <strong class="block uppercase border-b-4 border-brutal-pink pb-1 mb-2 text-xl font-black text-brutal-pink">The Financial Benefit</strong>
+                                <p class="text-base font-semibold leading-relaxed">MB Ageas Life returns a percentage of the total annualized premium back to DEEP C as a service fee. Over a 3-to-5 year timeline, as tenant participation scales, this recurring revenue stream can completely offset DEEP C’s initial 10%–15% premium subsidy, rendering the program net-neutral or even profitable for the developer.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Point 2 -->
+                    <div class="brutal-card bg-[#009a44] text-white border-4 border-black p-8 shadow-[8px_8px_0px_0px_#000000] reveal flex flex-col transform hover:-translate-y-2 hover:rotate-1">
+                        <div class="bg-white text-black border-4 border-black font-black text-xl uppercase p-3 mb-6 inline-block transform rotate-2 shadow-brutal-sm">
+                            2. Co-Investment in Social Utilities
+                        </div>
+                        
+                        <p class="font-semibold text-lg leading-relaxed mb-6">
+                            Instead of simply paying out claims, MB Ageas Life can pledge to reinvest a calculated percentage of its underwriting profit directly back into DEEP C’s physical footprint.
+                        </p>
+                        
+                        <div class="mt-auto space-y-4">
+                            <div class="bg-white text-black border-4 border-black p-5 shadow-brutal-sm">
+                                <strong class="block uppercase border-b-4 border-[#009a44] pb-1 mb-2 text-xl font-black">The Mechanism</strong>
+                                <p class="text-base font-semibold leading-relaxed">MB Ageas Life establishes a <strong class="bg-[#009a44] text-white px-1">"Community Health Dividend."</strong> If the overall claim rates stay below a certain threshold—due to a healthy, safe working environment—a portion of the surplus is redirected into park utilities.</p>
+                            </div>
+                            <div class="bg-black text-white border-4 border-black p-5 shadow-brutal-sm">
+                                <strong class="block uppercase border-b-4 border-[#009a44] pb-1 mb-2 text-xl font-black text-[#4ade80]">The Financial Benefit</strong>
+                                <p class="text-base font-semibold leading-relaxed">This capital can be used to dramatically expand the existing 24/7 First Aid Clinic operated with Viet Tiep Hospital. By upgrading this facility into a specialized hub for applied preventive medicine, the park can offer advanced occupational health screenings and continuous wellness monitoring. DEEP C gains state-of-the-art social infrastructure at a fraction of the capital expenditure, heavily subsidized by the insurer.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Point 3 -->
+                    <div class="brutal-card bg-[#0056b3] text-white border-4 border-black p-8 shadow-[8px_8px_0px_0px_#000000] reveal flex flex-col transform hover:-translate-y-2 hover:-rotate-1">
+                        <div class="bg-white text-black border-4 border-black font-black text-xl uppercase p-3 mb-2 inline-block transform -rotate-1 shadow-brutal-sm">
+                            3. Amplifying ESG CSR Initiatives
+                        </div>
+                        <p class="font-black text-sm mb-6 uppercase tracking-wider bg-[#00a3e0] text-black px-3 py-1 inline-block self-start transform rotate-2 border-2 border-black">(The Charity Angle)</p>
+                        
+                        <p class="font-semibold text-lg leading-relaxed mb-6">
+                            DEEP C already dedicates significant resources to corporate social responsibility, such as the "DEEP C Care for Children" project which provides scholarships and mentoring to vulnerable students.
+                        </p>
+                        
+                        <div class="mt-auto space-y-4">
+                            <div class="bg-white text-black border-4 border-black p-5 shadow-brutal-sm">
+                                <strong class="block uppercase border-b-4 border-[#0056b3] pb-1 mb-2 text-xl font-black">The Mechanism</strong>
+                                <p class="text-base font-semibold leading-relaxed">MB Ageas Life can introduce a <strong class="bg-brutal-yellow px-1 border border-black">"Matching Impact"</strong> clause within the master framework. For every policy activated under the Tripartite Model, MB Ageas Life commits a matching donation to DEEP C’s designated community funds.</p>
+                            </div>
+                            <div class="bg-black text-white border-4 border-black p-5 shadow-brutal-sm">
+                                <strong class="block uppercase border-b-4 border-[#00a3e0] pb-1 mb-2 text-xl font-black text-[#00a3e0]">The Financial Benefit</strong>
+                                <p class="text-base font-semibold leading-relaxed">This effectively doubles DEEP C’s charitable footprint and social impact without the developer needing to allocate additional budget. It strengthens community goodwill, local government relations, and fulfills key UN Sustainable Development Goals (SDGs) effortlessly.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Point 4 -->
+                    <div class="brutal-card bg-brutal-yellow border-4 border-black p-8 shadow-[8px_8px_0px_0px_#000000] reveal flex flex-col transform hover:-translate-y-2 hover:rotate-1">
+                        <div class="bg-black text-white border-4 border-white font-black text-xl uppercase p-3 mb-2 inline-block transform rotate-1 shadow-brutal-sm">
+                            4. Enhancing High-Tech ESG Valuation
+                        </div>
+                        <p class="font-black text-sm mb-6 uppercase tracking-wider bg-white text-black px-3 py-1 inline-block self-start transform -rotate-2 border-2 border-black">(The Magnet Effect)</p>
+                        
+                        <p class="font-semibold text-lg text-black leading-relaxed mb-6">
+                            While harder to measure in immediate cash flow, this is arguably the most lucrative long-term benefit for an industrial developer.
+                        </p>
+                        
+                        <div class="mt-auto space-y-4">
+                            <div class="bg-white border-4 border-black p-5 shadow-brutal-sm">
+                                <strong class="block uppercase border-b-4 border-brutal-orange pb-1 mb-2 text-xl font-black">The Mechanism</strong>
+                                <p class="text-base font-semibold leading-relaxed">The Tripartite Model generates highly structured, auditable data on worker welfare, health equity, and financial inclusion. MB Ageas Life can provide DEEP C with anonymized, comprehensive annual impact reports detailing the specific social safety net established within the park.</p>
+                            </div>
+                            <div class="bg-black text-white border-4 border-white p-5 shadow-brutal-sm">
+                                <strong class="block uppercase border-b-4 border-brutal-yellow pb-1 mb-2 text-xl font-black text-brutal-yellow">The Financial Benefit</strong>
+                                <p class="text-base font-semibold leading-relaxed">A verifiable, premium social safety net is a massive competitive differentiator. It provides the exact type of rigorous, transparent ESG data that tier-one US investment and consulting firms require when deploying capital into high-tech, sustainable industrial parks. It shifts DEEP C's value proposition from merely offering "green land" to offering a fully integrated, low-risk, high-retention human capital ecosystem, allowing DEEP C to command premium lease rates and attract top-tier multinational tenants.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Section 6: CASE STUDY ĐIỂN HÌNH -->
+    <section id="case-study" class="py-24 bg-white border-b-4 border-black relative">
+        <div class="absolute top-0 left-0 w-full h-8 diagonal-stripes border-b-4 border-black"></div>
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mt-12">
+            <div class="reveal mb-16 relative">
+                <div class="absolute -top-10 -left-6 w-32 h-32 bg-brutal-pink rounded-full border-4 border-black z-0 mix-blend-multiply"></div>
+                <h2 class="relative z-10 inline-block bg-black text-white px-6 py-4 font-black text-4xl md:text-5xl uppercase shadow-brutal transform -rotate-1 border-4 border-white">
+                    Case Study: UNIVERSAL RESIDENTIAL INSURANCE
+                </h2>
+                <h3 class="font-serif italic text-3xl font-black mt-6 text-brutal-purple border-b-4 border-brutal-purple inline-block">
+                    Worker Welfare & Insurance Problem
+                </h3>
+            </div>
+            <div class="reveal border-l-8 border-black pl-6 md:pl-10 mb-20 bg-brutal-bg p-8 border-4 shadow-brutal-sm">
+                <div class="flex items-start gap-4">
+                    <span class="text-6xl">💡</span>
+                    <div>
+                        <p class="text-2xl font-black uppercase mb-4 text-black">Strategic B2B2C Approach</p>
+                        <p class="text-lg font-semibold text-gray-800 leading-relaxed">
+                            Worker salaries are around 12-15 million/month (Total 24-30 million/household). The solution isn't retail (B2C), but negotiating with Industrial Park / Factory Owners (B2B2C). This is the key to perfectly integrating <strong class="bg-brutal-yellow px-1 border-2 border-black">Insurance, Healthcare, and large-scale HR Management</strong>.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- PART 1: The Package -->
+            <div class="reveal mb-24">
+                <h3 class="font-black text-3xl uppercase bg-brutal-blue inline-block px-6 py-2 border-4 border-black shadow-brutal mb-6 transform rotate-1">
+                    "Tailor-Made" Protection Package (5-8% of Income)
+                </h3>
+                <div class="mb-10">
+                    <p class="font-bold text-xl bg-white p-4 border-4 border-black shadow-brutal-sm inline-block transform -rotate-1">
+                        Proposed Protection Structure (Reference Premium ~20-22 million/year):
+                    </p>
+                </div>
+                
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mt-6">
+                    <!-- Trụ cột 1 -->
+                    <div class="brutal-card bg-white border-4 border-black p-6 shadow-brutal relative mt-6 md:mt-0">
+                        <div class="absolute -top-6 -right-4 bg-black text-white font-black px-3 py-2 border-2 border-white transform rotate-3 text-sm max-w-[85%] text-right leading-tight shadow-brutal-sm">
+                            Husband (Main Pillar - Premium ~9-10M/year):
+                        </div>
+                        <h4 class="font-black text-3xl uppercase mb-4 text-brutal-purple border-b-4 border-black pb-2 mt-4">Husband</h4>
+                        <ul class="space-y-4 font-semibold text-lg">
+                            <li class="flex gap-3 items-start"><span class="text-xl mt-1">✅</span> <div><strong>Main Product (Life):</strong> Life coverage ~500M.</div></li>
+                            <li class="flex gap-3 items-start"><span class="text-xl mt-1">⚠️</span> <div><strong>Core Supplementary:</strong> Advanced Accident Insurance (Face value 500M) paid based on disability ratio. This is the highest risk for male workers.</div></li>
+                        </ul>
+                    </div>
+                    <!-- Trụ cột 2 -->
+                    <div class="brutal-card bg-white border-4 border-black p-6 shadow-brutal relative mt-6 md:mt-0">
+                        <div class="absolute -top-6 -right-4 bg-black text-white font-black px-3 py-2 border-2 border-white transform -rotate-3 text-sm max-w-[85%] text-right leading-tight shadow-brutal-sm">
+                            Wife (Secondary Pillar - Premium ~7-8M/year):
+                        </div>
+                        <h4 class="font-black text-3xl uppercase mb-4 text-brutal-pink border-b-4 border-black pb-2 mt-4">Wife</h4>
+                        <ul class="space-y-4 font-semibold text-lg">
+                            <li class="flex gap-3 items-start"><span class="text-xl mt-1">✅</span> <div><strong>Main Product (Life):</strong> Life coverage ~300M.</div></li>
+                            <li class="flex gap-3 items-start"><span class="text-xl mt-1">🩺</span> <div><strong>Core Supplementary:</strong> Critical Illness Fund (~200M) to protect against gynecological cancer risks or financially draining illnesses.</div></li>
+                        </ul>
+                    </div>
+                    <!-- Phụ thuộc -->
+                    <div class="brutal-card bg-brutal-green border-4 border-black p-6 shadow-brutal relative mt-6 md:mt-0">
+                        <div class="absolute -top-6 -right-4 bg-black text-white font-black px-3 py-2 border-2 border-white transform rotate-6 text-sm max-w-[85%] text-right leading-tight shadow-brutal-sm">
+                            Child (Dependent - Premium ~3-4M/year):
+                        </div>
+                        <h4 class="font-black text-3xl uppercase mb-4 text-black border-b-4 border-black pb-2 mt-4">Child</h4>
+                        <ul class="space-y-4 font-semibold text-lg">
+                            <li class="flex gap-3 items-start"><span class="text-xl mt-1">🏥</span> <div><strong>Product:</strong> Add-on Inpatient Health Care Card (Basic limit ~100-200M/year) attached to a parent's contract. Children in industrial zones are prone to respiratory diseases; this health card helps them escape the worry of petty hospital fees.</div></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- PART 2 & 3 Condensed for brevity, keeping original logic -->
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 mb-12">
+                <!-- VŨ KHÍ -->
+                <div class="reveal">
+                    <h3 class="font-black text-2xl uppercase bg-brutal-yellow inline-block px-4 py-2 border-4 border-black shadow-brutal mb-8 transform -rotate-1">B2B Negotiation Weapons</h3>
+                    <div class="space-y-4">
+                        <div class="bg-white border-4 border-black p-4 shadow-brutal hover:bg-black hover:text-white transition-colors group flex gap-4">
+                            <div class="font-black text-4xl text-brutal-pink">01</div>
+                            <div><h4 class="font-black uppercase mb-1">ESG Standards</h4><p class="text-sm font-semibold">An insurance welfare package is the cheapest, fastest way to raise ESG scores, pass audits (Apple, Nike...), and attract FDI capital.</p></div>
+                        </div>
+                        <div class="bg-white border-4 border-black p-4 shadow-brutal hover:bg-black hover:text-white transition-colors group flex gap-4">
+                            <div class="font-black text-4xl text-brutal-blue">02</div>
+                            <div><h4 class="font-black uppercase mb-1">Retention Cost</h4><p class="text-sm font-semibold">Instead of spending 20-30M to hire a replacement, spend 2-5M/year to create "golden handcuffs." Workers stay loyal because they fear losing family health cards.</p></div>
+                        </div>
+                        <div class="bg-white border-4 border-black p-4 shadow-brutal hover:bg-black hover:text-white transition-colors group flex gap-4">
+                            <div class="font-black text-4xl text-brutal-orange">03</div>
+                            <div><h4 class="font-black uppercase mb-1">Optimize Corporate Tax</h4><p class="text-sm font-semibold">Life/retirement insurance costs (capped at 3M/person/month) are tax-deductible. Companies use tax money to buy loyalty.</p></div>
+                        </div>
+                    </div>
+                </div>
+                <!-- ẨN PHÍ -->
+                <div class="reveal">
+                    <h3 class="font-black text-2xl uppercase bg-brutal-pink inline-block px-4 py-2 border-4 border-black shadow-brutal mb-8 transform rotate-1 text-white">The Art of "Hidden Fees"</h3>
+                    <div class="space-y-4">
+                        <div class="bg-white border-4 border-black p-4 shadow-brutal-sm">
+                            <h4 class="font-black uppercase border-b-2 border-brutal-yellow pb-1 mb-2">1. Restructure the Bonus Fund</h4>
+                            <p class="font-bold text-xs bg-brutal-bg p-2 border border-black">Instead of raising base salaries (which increases social insurance costs) or paying Tet bonuses in cash, gift a "Seniority & Welfare Package" on the payroll, without deducting take-home pay.</p>
+                        </div>
+                        <div class="bg-white border-4 border-black p-4 shadow-brutal-sm">
+                            <h4 class="font-black uppercase border-b-2 border-brutal-green pb-1 mb-2">2. Co-pay & Attendance</h4>
+                            <p class="font-bold text-xs bg-brutal-bg p-2 border border-black">"Work full days: 500k/month bonus. This + 1 million company sponsor = Insurance Fund." Use "bonus" money to buy, without touching the base salary.</p>
+                        </div>
+                        <div class="bg-white border-4 border-black p-4 shadow-brutal-sm">
+                            <h4 class="font-black uppercase border-b-2 border-brutal-blue pb-1 mb-2">3. Ecosystem (Cashback)</h4>
+                            <p class="font-bold text-xs bg-brutal-bg p-2 border border-black">Rent for internal dormitories and supermarket purchases accumulate points. At year-end, automatically use points + union funds to renew the health card. Consumption generates protection!</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section 7: NGÂN SÁCH -->
+    <section id="budget" class="py-24 bg-brutal-bg border-b-4 border-black relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="reveal mb-8 text-center">
+                <h2 class="inline-block bg-black text-brutal-yellow px-6 py-4 font-black text-4xl md:text-5xl uppercase shadow-brutal transform rotate-1 border-4 border-black">
+                    The 5,000 Workers Problem
+                </h2>
+            </div>
+            
+            <div class="reveal mb-12 max-w-4xl mx-auto">
+                <p class="font-bold text-lg bg-white p-6 border-4 border-black shadow-brutal-sm leading-relaxed transform -rotate-1">
+                    Based on the comprehensive protection package structure analyzed (Total ~21 million/year for a family of 3; where the primary worker is about 8.5 - 10 million/year), below is the calculation for total insurance premiums across 3 highly realistic scenarios for factory owners:
+                </p>
+            </div>
+
+            <!-- Grid 3 kịch bản -->
+            <div class="grid grid-cols-1 lg:grid-cols-3 gap-8 mb-20">
+                <!-- Kịch bản 1 -->
+                <div class="brutal-card bg-[#a855f7] text-white border-4 border-black p-6 md:p-8 shadow-brutal reveal flex flex-col justify-between">
+                    <div>
+                        <div class="bg-black text-white font-black px-4 py-1 inline-block uppercase text-sm mb-4 border-2 border-white transform -rotate-2">Scenario 1</div>
+                        <h3 class="font-black text-2xl uppercase mb-2">Factory 100% sponsors "Family Package"</h3>
+                        <p class="font-bold text-brutal-yellow uppercase tracking-widest text-xs mb-4 border-b-2 border-white/30 pb-2">(Diamond Welfare Level)</p>
+                        
+                        <p class="font-semibold text-base mb-6 text-purple-50">The company pays the entire insurance cost for the worker, their spouse, and children. This is a strategy used by multinationals to drive the turnover rate to 0%.</p>
+                        
+                        <div class="mb-4 bg-white/10 p-3 border border-white/30">
+                            <span class="block text-xs font-bold uppercase opacity-90">Estimated Unit Price:</span>
+                            <span class="font-black text-xl">~21,000,000 VND <span class="text-sm font-bold">/ family / year</span></span>
+                        </div>
+                        <div class="mb-6 bg-white text-black p-4 border-2 border-black">
+                            <span class="block text-xs font-black uppercase mb-1 text-gray-500">Total Budget:</span>
+                            <span class="font-bold text-sm block mb-1">5,000 families x 21,000,000 VND =</span>
+                            <div class="font-black text-3xl md:text-4xl text-[#a855f7]">105 Billion VND<span class="text-base font-bold text-black">/year</span></div>
+                        </div>
+                    </div>
+                    
+                    <div class="mt-auto border-t-4 border-black pt-4">
+                        <span class="font-black uppercase text-sm block mb-2 text-brutal-yellow">Financial Perspective for the Owner:</span>
+                        <p class="font-medium text-sm leading-relaxed opacity-90">105 billion/year divided by 5,000 people equals an additional welfare cost of about 1.75 million VND/person/month. If this fits into their annual salary/bonus raise budget, they can easily shift it to insurance to optimize taxes and retain staff far better than straight cash.</p>
+                    </div>
+                </div>
+
+                <!-- Kịch bản 2 -->
+                <div class="brutal-card bg-brutal-blue text-black border-4 border-black p-6 md:p-8 shadow-brutal reveal flex flex-col justify-between delay-100">
+                    <div>
+                        <div class="bg-black text-white font-black px-4 py-1 inline-block uppercase text-sm mb-4 border-2 border-black transform rotate-2">Scenario 2</div>
+                        <h3 class="font-black text-2xl uppercase mb-2">Factory 100% sponsors "Personal Package"</h3>
+                        <p class="font-bold text-gray-800 uppercase tracking-widest text-xs mb-4 border-b-2 border-black/30 pb-2">(Standard Welfare Level)</p>
+                        
+                        <p class="font-semibold text-base mb-6 text-gray-900">The enterprise only covers the comprehensive insurance package (Life + Accident + Critical Illness) for the worker directly employed. If workers want to add their spouse/children, they pay out of pocket (relatives get to buy in at a discounted group rate).</p>
+                        
+                        <div class="mb-4 bg-white/50 p-3 border border-black/30">
+                            <span class="block text-xs font-bold uppercase opacity-90">Estimated Unit Price (Avg Male & Female):</span>
+                            <span class="font-black text-xl">~8,500,000 VND <span class="text-sm font-bold">/ worker / year</span></span>
+                        </div>
+                        <div class="mb-6 bg-white text-black p-4 border-2 border-black">
+                            <span class="block text-xs font-black uppercase mb-1 text-gray-500">Total Budget:</span>
+                            <span class="font-bold text-sm block mb-1">5,000 workers x 8,500,000 VND =</span>
+                            <div class="font-black text-3xl md:text-4xl text-brutal-blue" style="-webkit-text-stroke: 1px black;">42.5 Billion VND<span class="text-base font-bold text-black" style="-webkit-text-stroke: 0px;">/year</span></div>
+                        </div>
+                    </div>
+                    
+                    <div class="mt-auto border-t-4 border-black pt-4">
+                        <span class="font-black uppercase text-sm block mb-2">Financial Perspective for the Owner:</span>
+                        <p class="font-medium text-sm leading-relaxed text-gray-800">Equivalent to an extra cost of about 700,000 VND/person/month. This is extremely feasible for large-scale factories looking to elevate their ESG (Environmental, Social, Governance) standards.</p>
+                    </div>
+                </div>
+
+                <!-- Kịch bản 3 -->
+                <div class="brutal-card bg-brutal-green text-black border-4 border-black p-6 md:p-8 shadow-brutal reveal flex flex-col justify-between delay-200">
+                    <div>
+                        <div class="bg-black text-brutal-green font-black px-4 py-1 inline-block uppercase text-sm mb-4 border-2 border-black transform -rotate-1">Scenario 3</div>
+                        <h3 class="font-black text-2xl uppercase mb-2">Co-pay Model via "Welfare & Bonus Fund"</h3>
+                        
+                        <p class="font-semibold text-base mb-6 mt-4 text-gray-900">This is the easiest model to negotiate successfully because it minimizes financial pressure on the factory, using the precise "hidden fee" art analyzed above. The factory sponsors a fixed amount, while the rest is deducted from the worker's seniority bonus or attendance allowance.</p>
+                        
+                        <div class="mb-6 bg-white p-4 border-2 border-black">
+                            <span class="block text-xs font-black uppercase mb-3 border-b-2 border-black pb-2">Proposed Budget Structure (For an 8.5M/year personal package):</span>
+                            <div class="flex flex-col gap-3 font-bold text-sm">
+                                <div>
+                                    <span class="text-brutal-purple block uppercase font-black">Factory Sponsors (40%):</span> 
+                                    <span class="text-base font-black">3,400,000 VND/year</span> <br><span class="text-xs font-semibold text-gray-600">(Costs only ~280,000VND/month/person)</span>
+                                </div>
+                                <div class="border-t border-dashed border-gray-400 pt-2">
+                                    <span class="text-blue-700 block uppercase font-black">Worker Contributes via Bonus (60%):</span> 
+                                    <span class="text-base font-black">5,100,000 VND/year</span> <br><span class="text-xs font-semibold text-gray-600">(Deducted from allowances, untouched base salary)</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="mt-auto border-t-4 border-black pt-4">
+                        <span class="font-black uppercase text-sm block mb-1">Total Budget for the Factory:</span>
+                        <span class="font-bold text-sm block mb-1">5,000 workers x 3,400,000 VND =</span>
+                        <div class="font-black text-3xl md:text-4xl text-brutal-green" style="-webkit-text-stroke: 1px black;">17 Billion VND<span class="text-base font-bold text-black" style="-webkit-text-stroke: 0px;">/year</span></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section 8: TỬ HUYỆT ĐÀM PHÁN B2B (NEW) -->
+    <section id="roi-strategy" class="py-24 bg-black border-b-4 border-black relative dots-bg">
+        <!-- Add a brutalist background pattern layer -->
+        <div class="absolute inset-0 opacity-20" style="background-image: repeating-linear-gradient(45deg, #FFDF00 0, #FFDF00 2px, transparent 2px, transparent 10px);"></div>
+        
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            
+            <!-- Header -->
+            <div class="reveal mb-16 text-center">
+                <h2 class="inline-block bg-brutal-pink text-black px-8 py-5 font-black text-5xl md:text-7xl uppercase shadow-[8px_8px_0px_0px_#FFFFFF] transform -rotate-2 border-4 border-black">
+                    MASSIVE <span class="bg-white text-black px-2 border-2 border-black">BENEFITS</span>
+                </h2>
+            </div>
+
+            <!-- Intro -->
+            <div class="reveal mb-24 max-w-4xl mx-auto text-center">
+                <p class="font-serif italic text-2xl md:text-3xl font-black bg-brutal-yellow text-black p-8 border-4 border-black shadow-[8px_8px_0px_0px_#4ade80] inline-block transform rotate-1">
+                    "The perspective that turns insurance into <span class="bg-black text-white px-3 py-1 border-2 border-white uppercase font-sans not-italic inline-block mt-2 transform -rotate-2 shadow-brutal-white">an investment with clear ROI</span>."
+                </p>
+            </div>
+
+            <!-- PART I: Chủ Nhà Máy -->
+            <div class="mb-32 reveal">
+                <h3 class="font-black text-3xl md:text-5xl uppercase bg-brutal-orange text-black inline-block px-6 py-4 border-4 border-black shadow-[8px_8px_0px_0px_#FFFFFF] mb-12 transform -rotate-1">
+                    I. For Factory Owners (Manufacturing)
+                </h3>
+                <p class="font-bold text-xl md:text-2xl mb-12 border-l-8 border-brutal-orange pl-6 text-white py-2">Directly solves the 4 biggest pain points in factory operations:</p>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-10">
+                    
+                    <!-- Point 1 -->
+                    <div class="brutal-card border-4 border-black shadow-[12px_12px_0px_0px_#FFFFFF] bg-brutal-yellow flex flex-col h-full transform -rotate-1 hover:rotate-0 transition-transform">
+                        <div class="p-6 border-b-4 border-black bg-white flex items-center gap-4">
+                            <span class="text-5xl">🔗</span>
+                            <h4 class="font-black text-2xl uppercase leading-tight">1. "Golden Handcuffs" <br><span class="text-lg text-gray-500">Retaining Staff</span></h4>
+                        </div>
+                        <div class="p-6 flex-grow flex flex-col gap-6">
+                            <div class="border-4 border-dashed border-black p-4 bg-white/50">
+                                <span class="font-black text-xs bg-black text-white px-2 py-1 uppercase tracking-widest">Harsh Reality</span>
+                                <p class="mt-3 font-bold text-gray-800 leading-relaxed">Losing a skilled worker costs 20-30 million VND (lost output, hiring costs, training time).</p>
+                            </div>
+                            <div class="border-4 border-black p-5 bg-brutal-pink mt-auto shadow-brutal-sm">
+                                <span class="font-black text-xs bg-black text-white px-2 py-1 uppercase tracking-widest">Deep Benefit (ROI)</span>
+                                <p class="mt-3 font-bold text-black leading-relaxed text-lg">Protecting the whole family hits their softest spot. Quitting for a 500k raise = losing the child's health card. <strong class="bg-white px-2 border-2 border-black inline-block mt-1">The decision to quit will be stopped by the family. Turnover rate drops to near 0%.</strong></p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Point 2 -->
+                    <div class="brutal-card border-4 border-black shadow-[12px_12px_0px_0px_#FFDF00] bg-brutal-blue flex flex-col h-full transform rotate-1 hover:rotate-0 transition-transform">
+                        <div class="p-6 border-b-4 border-black bg-white flex items-center gap-4">
+                            <span class="text-5xl">🌍</span>
+                            <h4 class="font-black text-2xl uppercase leading-tight">2. FDI Ticket <br><span class="text-lg text-gray-500">Solving the ESG Equation</span></h4>
+                        </div>
+                        <div class="p-6 flex-grow flex flex-col gap-6">
+                            <div class="border-4 border-dashed border-black p-4 bg-white/50">
+                                <span class="font-black text-xs bg-black text-white px-2 py-1 uppercase tracking-widest">Harsh Reality</span>
+                                <p class="mt-3 font-bold text-gray-800 leading-relaxed">Supply chains (Apple, Nike...) audit ESG aggressively. The "S" (Social responsibility) is usually a factory's failing grade.</p>
+                            </div>
+                            <div class="border-4 border-black p-5 bg-brutal-green mt-auto shadow-brutal-sm">
+                                <span class="font-black text-xs bg-black text-white px-2 py-1 uppercase tracking-widest">Deep Benefit (ROI)</span>
+                                <p class="mt-3 font-bold text-black leading-relaxed text-lg">Welfare extending to worker families is hard proof. Turn the factory into a "humane environment," creating <strong class="bg-white px-2 border-2 border-black inline-block mt-1">an absolute advantage when bidding for billion-dollar orders from the West.</strong></p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Point 3 -->
+                    <div class="brutal-card border-4 border-black shadow-[12px_12px_0px_0px_#4ade80] bg-brutal-pink flex flex-col h-full transform -rotate-2 hover:rotate-0 transition-transform">
+                        <div class="p-6 border-b-4 border-black bg-white flex items-center gap-4">
+                            <span class="text-5xl">🚫</span>
+                            <h4 class="font-black text-2xl uppercase leading-tight">3. Eradicate Strikes <br><span class="text-lg text-gray-500">& Loan Sharks</span></h4>
+                        </div>
+                        <div class="p-6 flex-grow flex flex-col gap-6">
+                            <div class="border-4 border-dashed border-black p-4 bg-white/50">
+                                <span class="font-black text-xs bg-black text-white px-2 py-1 uppercase tracking-widest">Harsh Reality</span>
+                                <p class="mt-3 font-bold text-gray-800 leading-relaxed">Strikes are often driven by debt pressure. Sick child -> High-interest loan -> Gangster debt collectors -> Production halts.</p>
+                            </div>
+                            <div class="border-4 border-black p-5 bg-brutal-yellow mt-auto shadow-brutal-sm">
+                                <span class="font-black text-xs bg-black text-white px-2 py-1 uppercase tracking-widest">Deep Benefit (ROI)</span>
+                                <p class="mt-3 font-bold text-black leading-relaxed text-lg">Completely severs the vicious cycle. Financially secure workers are fully dedicated, <strong class="bg-white px-2 border-2 border-black inline-block mt-1">minimizing product defects and workplace accidents.</strong></p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Point 4 -->
+                    <div class="brutal-card border-4 border-black shadow-[12px_12px_0px_0px_#FF90E8] bg-brutal-green flex flex-col h-full transform rotate-2 hover:rotate-0 transition-transform">
+                        <div class="p-6 border-b-4 border-black bg-white flex items-center gap-4">
+                            <span class="text-5xl">💰</span>
+                            <h4 class="font-black text-2xl uppercase leading-tight">4. Cash Flow Magic <br><span class="text-lg text-gray-500">Into Company Assets</span></h4>
+                        </div>
+                        <div class="p-6 flex-grow flex flex-col gap-6">
+                            <div class="border-4 border-dashed border-black p-4 bg-white/50">
+                                <span class="font-black text-xs bg-black text-white px-2 py-1 uppercase tracking-widest">Harsh Reality</span>
+                                <p class="mt-3 font-bold text-gray-800 leading-relaxed">Corporate Income Tax (CIT) is cash flow "gone forever."</p>
+                            </div>
+                            <div class="border-4 border-black p-5 bg-brutal-blue mt-auto shadow-brutal-sm">
+                                <span class="font-black text-xs bg-black text-white px-2 py-1 uppercase tracking-widest">Deep Benefit (ROI)</span>
+                                <p class="mt-3 font-bold text-black leading-relaxed text-lg">Money spent on worker insurance is a valid tax-deductible expense. <strong class="bg-white px-2 border-2 border-black inline-block mt-1">Employers are using money that would be taxed to "buy" loyalty.</strong></p>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+            <!-- PART II: Chủ Đầu Tư KCN -->
+            <div class="reveal">
+                <h3 class="font-black text-3xl md:text-5xl uppercase bg-[#a855f7] text-white inline-block px-6 py-4 border-4 border-white shadow-[8px_8px_0px_0px_#FFDF00] mb-12 transform rotate-1">
+                    II. For Industrial Park Investors (Ecosystem)
+                </h3>
+                <p class="font-bold text-xl md:text-2xl mb-12 border-l-8 border-[#a855f7] pl-6 text-white py-2">Macro-value for the creators of 500-hectare mega-projects:</p>
+
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                    
+                    <!-- IP Point 1 -->
+                    <div class="brutal-card border-4 border-black shadow-[10px_10px_0px_0px_#4ade80] bg-white p-8 flex flex-col transform -rotate-1">
+                        <div class="text-6xl mb-6">🏙️</div>
+                        <h4 class="font-black text-2xl uppercase mb-4 border-b-8 border-brutal-purple pb-4">1. Sell the "Ecosystem", not the Land</h4>
+                        <p class="text-sm font-bold text-gray-600 mb-6 bg-gray-100 p-3 border-2 border-black border-dashed">Industrial Parks compete ruthlessly on rental prices.</p>
+                        <p class="font-bold text-black mt-auto text-lg leading-relaxed">Integrating insurance turns the project into a "New Generation Eco-Industrial Park." Clients buy a total HR solution, and the Investor <strong class="bg-brutal-yellow px-1 border-2 border-black">keeps rental prices higher than rivals</strong> while still having a line of clients.</p>
+                    </div>
+
+                    <!-- IP Point 2 -->
+                    <div class="brutal-card border-4 border-black shadow-[10px_10px_0px_0px_#FF90E8] bg-white p-8 flex flex-col transform rotate-1">
+                        <div class="text-6xl mb-6">🔄</div>
+                        <h4 class="font-black text-2xl uppercase mb-4 border-b-8 border-brutal-blue pb-4">2. Ignite Internal Consumer Networks</h4>
+                        <p class="text-sm font-bold text-gray-600 mb-6 bg-gray-100 p-3 border-2 border-black border-dashed">Salaries sent back to hometowns are cash flows bleeding out of the 500ha.</p>
+                        <p class="font-bold text-black mt-auto text-lg leading-relaxed">Financial security drops defensive psychology. They confidently rent homes and shop at internal supermarkets. Insurance acts as a <strong class="bg-brutal-blue px-1 border-2 border-black">catalyst surging retail revenues</strong> for the Investor.</p>
+                    </div>
+
+                    <!-- IP Point 3 -->
+                    <div class="brutal-card border-4 border-black shadow-[10px_10px_0px_0px_#93c5fd] bg-black text-white p-8 flex flex-col transform -rotate-2">
+                        <div class="text-6xl mb-6">📈</div>
+                        <h4 class="font-black text-2xl uppercase mb-4 border-b-8 border-brutal-green pb-4">3. Sustainable Real Estate Growth</h4>
+                        <p class="text-sm font-bold text-gray-400 mb-6 bg-gray-800 p-3 border-2 border-gray-500 border-dashed">Real Estate value depends on vibrance and cash flow.</p>
+                        <p class="font-bold text-white mt-auto text-lg leading-relaxed">A stable community of 50k people pushes up the prices of shophouses and villas. The prosperity of the "base of the pyramid" (workers) is <strong class="bg-brutal-green text-black px-1 border-2 border-white">the solid foundation for building peak-value assets.</strong></p>
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-black text-white py-16 border-t-8 border-brutal-pink">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <h2 class="font-black text-4xl uppercase mb-6 transform -rotate-2 inline-block bg-white text-black px-4 py-2 border-4 border-brutal-green">
+                Together to build a healthy and happy community <br> for Eco-Industrial Parks
+            </h2>
+            <p class="font-bold text-xl mb-8 uppercase tracking-widest text-brutal-yellow">Green Building. Social Welfare. Sustainable Development.</p>
+            <div class="w-full h-1 bg-white mb-8"></div>
+            <p class="font-bold text-sm text-gray-400">© 2026 daotuankhai@gmail.com.</p>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script>
+        // --- SCROLL REVEAL UI ANIMATION ---
+        document.addEventListener('DOMContentLoaded', () => {
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('active');
+                    }
+                });
+            }, { threshold: 0.1 });
+
+            document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+        });
+    </script>
+</body>
+</html>
